@@ -11,6 +11,8 @@ import ProductDetailInfo from "./ProductDetailInfo.js";
 import ProductDetailNutrition from "./ProductDetailNutrition.js";
 import ProductDetailStorage from "./ProductDetailStorage.js";
 
+
+
 export default function ProductDetails(props) {
   const [product, setProduct] = useState({});
   const { get } = useFetch("https://react-tutorial-demo.firebaseio.com/");
@@ -23,7 +25,7 @@ export default function ProductDetails(props) {
         setProduct(data);
       })
       .catch((error) => console.log("Could not load product details", error));
-  }, []);
+  }, [params]);
 
   return (
     <div className="product-details-layout">
